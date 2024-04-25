@@ -4,11 +4,47 @@
     padding: 0;
 }
 
+#root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
 header {
+    width:100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: purple;
     padding: 2rem;
     color: white;
+}
+
+#getMeme {
+    width: 80%;
+    margin: 1rem 0 1rem 0;
+}
+
+#inputs {
+    display: flex;
+    justify-content: space-between;
+}
+
+#inputs input {
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 0.5rem 0.5rem;
+    width: 48%;
+}
+
+#memeButton {
+    margin: 1rem 0 0 0;
+    width: 100%;
+    background-color: purple;
+    color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    border: none;
 }
