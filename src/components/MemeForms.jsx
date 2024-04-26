@@ -28,7 +28,7 @@ export default function MemeForms() {
                 </div>
                 <button onClick={handleClick} id="memeButton">Get a new meme image 🌠</button>
             </form>
-            <img src={memeImage} />
+            <img src={memeImage} id="image" />
         </>
     )
 }

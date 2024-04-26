@@ -52,3 +52,7 @@ header {
 #memeButton:hover {
     background-color: rgb(58, 0, 58);
 }
+
+#image {
+    max-width: 600px;
+}
