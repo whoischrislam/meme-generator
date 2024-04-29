@@ -21,7 +21,16 @@ export default function MemeForms() {
             ...prev,
             randomImage: url
         }));
-        console.log(meme.randomImage);
+    }
+
+    function handleInputs (event) {
+        const {name, value} = event.target;
+        setMeme(prevMeme => {
+            return {
+                ...prevMeme,
+                [name]: value
+            }
+        });
     }
 
     return (
@@ -29,15 +38,19 @@ export default function MemeForms() {
             <form onSubmit={handleSubmit} id="getMeme" name="getMeme" method='GET' >
                 <div id='inputs'>
                     <label>Top Text
-                    <input type='text' placeholder='Top text' />
+                    <input onChange={handleInputs} type='text' placeholder='Top text' value={meme.topText} name="topText" />
                     </label>
                     <label>Bottom Text
-                    <input id="bottom-text" type='text' placeholder='Bottom text' />
+                    <input onChange={handleInputs} id="bottom-text" type='text' placeholder='Bottom text' value={meme.bottomText} name="bottomText" />
                     </label>
                 </div>
                 <button onClick={handleClick} id="memeButton">Get a new meme image 🌠</button>
             </form>
-            <img src={meme.randomImage} id="image" />
+            <div className="meme">
+                <img src={meme.randomImage} id="image" />
+                <h2 className="meme--text top">{meme.topText}</h2>
+                <h2 className="meme--text bottom">{meme.bottomText}</h2>
+            </div>
         </>
     )
 }
